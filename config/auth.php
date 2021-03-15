@@ -46,6 +46,21 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+
+        'participants' => [
+            'driver' => 'jwt',
+            'provider' => 'participants',
+        ],
+
+        'organizers' => [
+            'driver' => 'jwt',
+            'provider' => 'organizers'
+        ],
+
+        'admins' => [
+            'driver' => 'jwt',
+            'provider' => 'admins'
+        ]
     ],
 
     /*
@@ -70,6 +85,21 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
+
+        'participants' => [
+            'driver' => 'eloquent',
+            'model' => App\Participant::class
+        ],
+
+        'organizers' => [
+            'driver' => 'eloquent',
+            'model' => App\Organizer::class
+        ],
+
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Admin::class
+        ]
 
         // 'users' => [
         //     'driver' => 'database',
