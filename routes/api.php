@@ -17,3 +17,31 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('/organizer/register', 'OrganizerAuthController@register');
+Route::post('/organizer/login', 'OrganizerAuthController@login');
+Route::post('/organizer/logout', 'OrganizerAuthController@logout');
+
+Route::post('/participant/register', 'ParticipantAuthController@register');
+Route::post('/participant/login', 'ParticipantAuthController@login');
+Route::post('/participant/logout', 'ParticipantAuthController@logout');
+
+
+Route::group(['prefix' => 'admin', 'middleware' => ['assign.guard:admins','jwt.auth']],function ()
+{
+    Route::get('/demo','AdminController@demo');
+});
+
+Route::group(['prefix' => 'organizer', 'middleware' => ['assign.guard:admins','jwt.auth']],function ()
+{
+    Route::get('/demo','OrganizerController@demo');
+});
+
+Route::group(['prefix' => 'participant', 'middleware' => ['assign.guard:admins','jwt.auth']],function ()
+{
+    Route::get('/demo','ParticipantController@demo');
+});
+
+Route::get('test', function (){
+    return hasPermission('run_test');
+});
