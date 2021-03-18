@@ -25,14 +25,13 @@ class OrganizerStoreRequest extends BaseFormRequest
     public function rules()
     {
         return [
-            'username' => 'required|string|max:50',
-            'email' => 'required|email|unique',
+            'email' => 'required|email',
             'first-name' => 'required|string|max:50',
             'last-name' => 'required|string|max:50',
-            'why-to-join' => 'required|mediumText',
+            'why-to-join' => 'required',
             'date-of-birth' => 'required|date',
-            'previous-experience' => 'required|mediumText',
-            'gender' => 'required|boolean',
+            'previous-experience' => 'required',
+            'gender_id' => 'required',
             'password' => 'required',
             'avatar' => 'mimes:jpeg,jpg,png,gif|max:3000',
         ];
@@ -47,7 +46,6 @@ class OrganizerStoreRequest extends BaseFormRequest
             'last-name.required' => 'Last name is required!',
             'password.required' => 'Password is required!',
             'why-to-join.required' => 'why-to-join is required!',
-            'gender.required' => 'Gender is required!',
             'date-of-birth.required' => 'Date-of-birth is required!',
             'previous-experience.required' => 'Previous Experience is required!',
         ];
@@ -63,7 +61,7 @@ class OrganizerStoreRequest extends BaseFormRequest
         return [
             'email' => 'trim|lowercase',
             'username' => 'trim|capitalize|escape',
-            'fisrt-name' => 'trim|capitalize|escape',
+            'first-name' => 'trim|capitalize|escape',
             'last-name' => 'trim|capitalize|escape'
         ];
     }

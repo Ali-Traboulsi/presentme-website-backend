@@ -7,7 +7,7 @@ use Tymon\JWTAuth\Http\Middleware\BaseMiddleware;
 use Exception;
 use Tymon\JWTAuth\JWT;
 
-class JwtMiddleware extends BaseMiddleware
+class JWTMiddleware extends BaseMiddleware
 {
     /**
      * Handle an incoming request.
@@ -19,7 +19,7 @@ class JwtMiddleware extends BaseMiddleware
     public function handle($request, Closure $next)
     {
         try {
-            $user = JWT::parseToken()->authenticate();
+            JWT::parseToken()->authenticate();
         } catch (Exception $e) {
             if ($e instanceof \Tymon\JWTAuth\Exceptions\TokenInvalidException){
                 return response()->json(['status' => 'Token is Invalid']);
@@ -32,4 +32,3 @@ class JwtMiddleware extends BaseMiddleware
         return $next($request);
     }
 }
-

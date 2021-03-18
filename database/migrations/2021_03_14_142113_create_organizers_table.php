@@ -14,7 +14,7 @@ class CreateOrganizersTable extends Migration
     public function up()
     {
         Schema::create('organizers', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('username');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
@@ -23,16 +23,20 @@ class CreateOrganizersTable extends Migration
             $table->mediumText('why-to-join');
             $table->mediumText('previous-experience');
             $table->date('date-of-birth');
-            $table->boolean('gender')->default(1)->comment('Gender');
             $table->string('password');
             $table->string('avatar')->default('default.jpg');
             $table->rememberToken();
 
-            $table->unsignedBigInteger('level_id');
-            $table->foreign('level_id')->references('id')->on('levels');
-            
+            $table->unsignedBigInteger('level_id')->nullable();
+            $table->unsignedBigInteger('gender_id')->nullable();
             $table->timestamps();
         });
+
+        Schema::table('organizers', function (Blueprint $table) {
+            $table->foreign('level_id')->references('id')->on('levels');
+            $table->foreign('gender_id')->references('id')->on('genders');
+        });
+
     }
 
     /**

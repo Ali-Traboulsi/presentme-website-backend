@@ -26,10 +26,9 @@ class Organizer extends Authenticatable implements JWTSubject
         'why-to-join',
         'date-of-birth',
         'previous-experience',
-        'gender',
+        'gender_id',
         'password',
         'avatar',
-        'level_id',
     ];
 
     /**

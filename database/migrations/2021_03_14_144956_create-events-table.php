@@ -14,23 +14,24 @@ class CreateEventsTable extends Migration
     public function up()
     {
         Schema::create('events', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->string("event-title");
             $table->mediumText("event-description");
             $table->date('event-date');
 
-            $table->unsignedBigInteger('organizer_id');
-            $table->foreign('organizer_id')->references('id')->on('organizers');
-
-            $table->unsignedBigInteger('sub_cat_id');
-            $table->foreign('sub_cat_id')->references('id')->on('subCategories');
-
-            $table->unsignedBigInteger('event_type_id');
-            $table->foreign('event_type_id')->references('id')->on('eventTypes');
+            $table->unsignedBigInteger('organizer_id')->nullable();
+            $table->unsignedBigInteger('sub_cat_id')->nullable();
+            $table->unsignedBigInteger('event_type_id')->nullable();
 
             $table->boolean('isActive')->default(false);
 
             $table->timestamps();
+        });
+
+        Schema::table('events', function (Blueprint $table) {
+            $table->foreign('organizer_id')->references('id')->on('organizers');
+            $table->foreign('sub_cat_id')->references('id')->on('subCategories');
+            $table->foreign('event_type_id')->references('id')->on('event_types');
         });
     }
 
@@ -41,6 +42,7 @@ class CreateEventsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('events');
+
     }
 }

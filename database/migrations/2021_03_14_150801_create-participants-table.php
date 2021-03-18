@@ -14,7 +14,7 @@ class CreateParticipantsTable extends Migration
     public function up()
     {
         Schema::create('participants', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('username');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
@@ -24,12 +24,9 @@ class CreateParticipantsTable extends Migration
             $table->string('password');
             $table->string('avatar')->default('default.jpg');
             $table->rememberToken();
-
-            $table->unsignedBigInteger('level_id');
-            $table->foreign('level_id')->references('id')->on('levels');
-
             $table->timestamps();
         });
+
     }
 
     /**
@@ -39,6 +36,6 @@ class CreateParticipantsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('participants');
     }
 }

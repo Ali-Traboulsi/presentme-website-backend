@@ -14,15 +14,18 @@ class CreateEventParticipantsTable extends Migration
     public function up()
     {
         Schema::create('event_participants', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
 
-            $table->foreign('participant_id');
-            $table->foreign('participant_id')->references('id')->on('participants');
+            $table->unsignedBigInteger('participant_id')->nullable();
 
-            $table->foreign('event_id');
-            $table->foreign('event_id')->references('id')->on('events');
+            $table->unsignedBigInteger('event_id')->nullable();
 
             $table->timestamps();
+        });
+
+        Schema::table('event_participants', function (Blueprint $table) {
+            $table->foreign('participant_id')->references('id')->on('participants');
+            $table->foreign('event_id')->references('id')->on('events');
         });
     }
 

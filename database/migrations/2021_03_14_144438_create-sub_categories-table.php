@@ -14,11 +14,14 @@ class CreateSubCategoriesTable extends Migration
     public function up()
     {
         Schema::create('subCategories', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->string("subCategory_name");
-            $table->unsignedBigInteger('cat_id');
-            $table->foreign('cat_id')->references('id')->on('categories');
+            $table->unsignedBigInteger('cat_id')->nullable();
             $table->timestamps();
+        });
+
+        Schema::table('subCategories', function (Blueprint $table) {
+            $table->foreign('cat_id')->references('id')->on('categories');
         });
     }
 
@@ -29,6 +32,7 @@ class CreateSubCategoriesTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('subCategories');
+
     }
 }

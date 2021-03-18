@@ -9,7 +9,7 @@ use Illuminate\Http\JsonResponse;
 use Waavi\Sanitizer\Laravel\SanitizesInput;
 
 
-class BaseFormRequest extends FormRequest
+abstract class BaseFormRequest extends FormRequest
 {
 
     use SanitizesInput;

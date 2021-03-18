@@ -6,31 +6,46 @@ use App\Organizer;
 use Exception;
 use Illuminate\Http\Request;
 use App\Http\Requests\OrganizerStoreRequest;
+use Tymon\JWTAuth\Exceptions\JWTException;
 
 class OrganizerAuthController extends Controller
 {
-     public function register(OrganizerStoreRequest $request){
+     public function register(Request $request): \Illuminate\Http\JsonResponse
+     {
 
         try{
 
-        $organizer = Organizer::create(array(
-            'username' => $request->get('username'),
-            'email' => $request->get('email'),
-            'first-name' => $request->get('first-name'),
-            'last-name' => $request->get('last-name'),
-            'why-to-join' => $request->get('why-to-join'),
-            'date-of-birth' => $request->get('date-of-birth'),
-            'previous-experience' => $request->get('previous-experience'),
-            'gender' => $request->get('gender'),
-            'password' => bcrypt($request->get('password')),
-            'avatar' => $request->get('avatar'),
-            'level_id' => 1
-        ));
+            // check for image uplaod
+            if ($request->hasFile('avatar')) {
+                $avatar = $request->file('avatar');
+                $filepath = $request->get('first-name').'-'.$request->get('last-name').'.'.$avatar->getClientOriginalExtension();
+                $avatar->storeAs('public/avatars/organizers', $filepath);
+            }
 
+            $data = [
+                'username' => $request->get('username'),
+                'email' => $request->get('email'),
+                'first-name' => $request->get('first-name'),
+                'last-name' => $request->get('last-name'),
+                'why-to-join' => $request->get('why-to-join'),
+                'date-of-birth' => $request->get('date-of-birth'),
+                'previous-experience' => $request->get('previous-experience'),
+                'gender_id' => $request->get('gender_id'),
+                'password' => bcrypt($request->get('password')),
+                'avatar' => $filepath,
+                'level_id' => '1'
+            ];
 
-        $token = auth()->guard('organizers')->login($organizer);
+            $organizer = new Organizer();
+            $organizer->fill($data);
 
-        return $this->respondWithToken($token);
+            $organizer->save();
+
+            return response()->json([
+                'success' => true,
+                'data' => $organizer
+            ], 200);
+
 
         }catch (\Illuminate\Database\QueryException $exception) {
             $errorInfo = $exception->errorInfo;
@@ -42,33 +57,36 @@ class OrganizerAuthController extends Controller
         }
     }
 
-    public function login()
+    public function login (Request $request): \Illuminate\Http\JsonResponse
     {
+        $input = $request->only('email', 'password');
+
         try {
-            $credentials = request(['email', 'password']);
-
-            if (! $token = auth()->guard('organizers')->attempt($credentials)) {
-                return response()->json(['error' => 'Unauthorized'], 401);
+            if (! $token = auth('organizers')->attempt($input)){
+                return response()->json([
+                    'success' => false,
+                    'error' => 'Invalid Credentials: email or password'
+                ]);
             }
-
-            return $this->respondWithToken($token);
-        }
-        catch (\Illuminate\Database\QueryException $exception) {
-            $errorInfo = $exception->errorInfo;
+        } catch (JWTException $e) {
             return response()->json([
-                'error' => true,
-                'message' => "Internal error occured",
-                'errormessage' => $errorInfo
-            ],500);
+                'success' => false,
+                'error' => 'Could not create token'
+            ]);
         }
 
+        return response()->json([
+            'success' => true,
+            'message' => 'Sign in Success',
+            'token' => $token
+        ]);
     }
 
     public function logout()
     {
         try {
-
             auth()->guard('organizers')->logout();
+
             return response()->json(['message' => 'Successfully logged out']);
         }
         catch (\Illuminate\Database\QueryException $exception) {
@@ -121,14 +139,6 @@ class OrganizerAuthController extends Controller
        }
     }
 
-    protected function respondWithToken($token)
-    {
-        return response()->json([
-            'access_token' => $token,
-            'token_type'   => 'bearer',
-            'expires_in'   => auth()->guard('api')->factory()->getTTL() * 60
-        ]);
-    }
 
 }
 

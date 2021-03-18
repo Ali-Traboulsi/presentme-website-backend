@@ -162,6 +162,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Waavi\Sanitizer\Laravel\SanitizerServiceProvider::class,
+        Fruitcake\Cors\CorsServiceProvider::class,
 
         /*
          * Package Service Providers...

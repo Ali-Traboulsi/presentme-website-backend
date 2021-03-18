@@ -5,10 +5,27 @@
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/presentMe-backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/presentMe-backend.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/EventType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/EventType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminAuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminAuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrganizerAuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrganizerAuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ParticipantAuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ParticipantAuthController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/JWTMiddleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/JWTMiddleware.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/BaseFormRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/BaseFormRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/OrganizerStoreRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/OrganizerStoreRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Organizer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Organizer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Participant.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Participant.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_14_142113_create_organizers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_14_142113_create_organizers_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_14_144137_create-categories-table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_14_144137_create-categories-table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_14_144438_create-sub_categories-table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_14_144438_create-sub_categories-table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_14_144956_create-events-table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_14_144956_create-events-table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_14_150801_create-participants-table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_14_150801_create-participants-table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_15_123126_create_event_participants_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_15_123126_create_event_participants_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,7 +33,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -27,6 +44,9 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -138,6 +158,7 @@
       <path value="$PROJECT_DIR$/vendor/lcobucci/jwt" />
       <path value="$PROJECT_DIR$/vendor/tymon/jwt-auth" />
       <path value="$PROJECT_DIR$/vendor/waavi/sanitizer" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-cors" />
     </include_path>
   </component>
   <component name="ProjectId" id="1pkeETxOBV8htjR7bp6FFkfBcyr" />
@@ -149,9 +170,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../real-client-project/back-end-movies-streaming-website" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="ReaderModeSettings">
+    <option name="enabled" value="false" />
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -167,7 +191,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1615731403647</updated>
-      <workItem from="1615731405201" duration="33886000" />
+      <workItem from="1615731405201" duration="60501000" />
+      <workItem from="1616059014927" duration="4220000" />
     </task>
     <servers />
   </component>
@@ -184,5 +209,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

@@ -26,7 +26,6 @@ class Participant extends Authenticatable implements JWTSubject
         'date-of-birth',
         'password',
         'avatar',
-        'level_id',
     ];
 
 
