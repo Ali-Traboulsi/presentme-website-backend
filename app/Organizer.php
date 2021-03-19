@@ -67,4 +67,8 @@ class Organizer extends Authenticatable implements JWTSubject
         }
     }
 
+    public function genders() {
+        return $this->hasOne(Gender::class);
+    }
+
 }

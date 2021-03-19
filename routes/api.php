@@ -50,3 +50,7 @@ Route::group(['prefix' => 'participant', 'middleware' => ['assign.guard:admins',
 Route::get('test', function (){
     return hasPermission('run_test');
 });
+
+
+Route::get('gender', 'GenderController@retrieve');
+Route::get('gender/{id}', 'GenderController@getGender');

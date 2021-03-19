@@ -7,7 +7,7 @@ use Exception;
 use Illuminate\Http\Request;
 use App\Http\Requests\OrganizerStoreRequest;
 use Tymon\JWTAuth\Exceptions\JWTException;
-
+use Illuminate\Support\Facades\Hash;
 class OrganizerAuthController extends Controller
 {
      public function register(Request $request): \Illuminate\Http\JsonResponse
@@ -31,7 +31,7 @@ class OrganizerAuthController extends Controller
                 'date-of-birth' => $request->get('date-of-birth'),
                 'previous-experience' => $request->get('previous-experience'),
                 'gender_id' => $request->get('gender_id'),
-                'password' => bcrypt($request->get('password')),
+                'password' => $request->get('password'),
                 'avatar' => $filepath,
                 'level_id' => '1'
             ];

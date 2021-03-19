@@ -2,30 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d0a744f5-f563-4b5f-aeb4-75c7dc46eeb1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/presentMe-backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/presentMe-backend.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/EventType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/EventType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminAuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminAuthController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrganizerAuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrganizerAuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ParticipantAuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ParticipantAuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/JWTMiddleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/JWTMiddleware.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/BaseFormRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/BaseFormRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/OrganizerStoreRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/OrganizerStoreRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Organizer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Organizer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Participant.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Participant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_14_142113_create_organizers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_14_142113_create_organizers_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_14_144137_create-categories-table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_14_144137_create-categories-table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_14_144438_create-sub_categories-table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_14_144438_create-sub_categories-table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_14_144956_create-events-table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_14_144956_create-events-table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_14_150801_create-participants-table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_14_150801_create-participants-table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_15_123126_create_event_participants_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_15_123126_create_event_participants_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -193,6 +172,8 @@
       <updated>1615731403647</updated>
       <workItem from="1615731405201" duration="60501000" />
       <workItem from="1616059014927" duration="4220000" />
+      <workItem from="1616086094614" duration="1455000" />
+      <workItem from="1616159217791" duration="1521000" />
     </task>
     <servers />
   </component>
